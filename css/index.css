@@ -1,0 +1,239 @@
+  * {
+      box-sizing: border-box;
+  }
+
+  /* Start  Container */
+  .container {
+      padding-left: 15px;
+      padding-right: 15px;
+      margin-left: auto;
+      margin-right: auto;
+      /*  */
+      margin-top: 30px;
+      margin-bottom: 30px;
+      transition: all 0.3s ease;
+
+  }
+
+  /*small*/
+  @media (max-width: 767px) {
+      .container {
+          width: 100%;
+      }
+
+  }
+
+  @media (min-width: 768px) {
+      .container {
+          width: 750px;
+      }
+
+  }
+
+  /*Medium*/
+  @media (min-width: 992px) {
+      .container {
+          width: 750px;
+      }
+  }
+
+  /*Large*/
+  @media (min-width: 1200px) {
+      .container {
+          width: 1170px;
+      }
+  }
+
+  /* End  Container */
+
+  /*Start Buttons */
+  .container .buttons {
+      margin: 30px 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+  }
+
+  .container .buttons .cta {
+      position: relative;
+      /* margin: auto; */
+      padding: 12px 18px;
+      transition: all 0.2s ease;
+      border: none;
+      background: none;
+      cursor: pointer;
+  }
+
+  /*small*/
+  @media (max-width: 416px) {
+      .container .buttons .cta {
+          padding: 12px 4px;
+      }
+
+  }
+
+  .container .buttons .cta:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      border-radius: 50px;
+      background: #b1dae7;
+      width: 45px;
+      height: 45px;
+      transition: all 0.3s ease;
+  }
+
+  /*small*/
+  @media (max-width: 767px) {
+      .container .buttons .cta:before {
+          top: 7px;
+          width: 30px;
+          height: 30px;
+      }
+
+  }
+
+  @media (max-width: 450px) {
+      .container .buttons .cta:before {
+          top: 15px;
+          width: 17px;
+          height: 17px;
+      }
+  }
+
+  .container .buttons .cta span {
+      position: relative;
+      font-family: "Ubuntu", sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      color: #234567;
+  }
+
+  /*small*/
+  @media (max-width: 767px) {
+      .container .buttons .cta span {
+          font-size: 10px;
+      }
+
+  }
+
+  .container .buttons .cta svg {
+      position: relative;
+      top: 0;
+      margin-left: 10px;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke: #234567;
+      stroke-width: 2;
+      transform: translateX(-5px);
+      transition: all 0.3s ease;
+  }
+
+  @media (max-width: 520px) {
+      .container .buttons .cta svg {
+          display: none;
+      }
+
+  }
+
+  .container .buttons .cta:hover:before {
+      width: 100%;
+      background: #b1dae7;
+  }
+
+  /* Active */
+  .container .buttons .cta.active:before {
+      width: 100%;
+      background: #b1dae7;
+  }
+
+  .container .buttons .cta:hover svg {
+      transform: translateX(0);
+  }
+ 
+
+  .container .buttons .cta:active {
+      transform: scale(0.95);
+  }
+
+  /*End Buttons */
+
+  /* Start gallery  */
+  .container .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(101px, 210px));
+      row-gap: 50px;
+      gap: 20px;
+      align-items: start;
+      margin-top: 72px;
+      justify-content: center;
+  }
+
+  /*small*/
+  @media (max-width: 767px) {
+      .container .gallery {
+          grid-template-columns: repeat(auto-fit, minmax(101px, 210px));
+      }
+
+  }
+
+  .container .gallery .box {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+  }
+
+  .container .gallery .box .image {
+      background-color: white;
+      padding: 5px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+      position: relative;
+      overflow: hidden;
+      width: 225px;
+  }
+
+  .container .gallery .box .image::before {
+      content: '';
+      position: absolute;
+      background-color: rgb(255 255 255 / 20%);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 0;
+      height: 0;
+      opacity: 0;
+      z-index: 2;
+  }
+
+  .container .gallery .box .image:hover::before {
+      animation: flashing .7s;
+  }
+
+  @keyframes flashing {
+
+      0%,
+      40% {
+          opacity: 1;
+      }
+
+      100% {
+          opacity: 0;
+          width: 200%;
+          height: 200%;
+      }
+
+  }
+
+  .container .gallery .box .image img {
+      transition: .3s;
+      border-radius: 10px;
+      width: 200px;
+  }
+
+  /*End  gallery  */
